@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Developer_Manager_Person with Class Syntax
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            greet() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+            }
+        };
+
+        let person = new Person("Maria Popova", 23);
+        person.greet();
+        let person2 = new Person("Bill Gates", 43);
+        person2.greet();
+        let person3 = new Person("Petar Petrov", 19);
+        person3.greet();
+
+        class Manager extends Person {
+            constructor(name, age, managed = []) {
+                super(name, age);
+                this.managed = managed;
+            }
+            greet() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.
+            I manage ${this.managed.join()}`)
+            }
+        };
+
+        let manager = new Manager("Bill Gates", 43, ["Maria Popova", "Petar Petrov"]);
+        manager.greet();
+
+        class Developer extends Person {
+            constructor(name, age, skillset = []) {
+                super(name, age);
+                this.skillset = skillset;
+            }
+            greet() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.
+            I know ${this.skillset.join()}`);
+            }
+        };
+
+        let developer = new Developer("Maria Popova", 23, ["Python", "Machine Learning"]);
+        developer.greet();
+        let developer2 = new Developer("Petar Petrov", 19, ["JavaScript", "Angular", "React", "Vue"]);
+        developer2.greet();
+
+    </script>
+</body>
+
+</html>

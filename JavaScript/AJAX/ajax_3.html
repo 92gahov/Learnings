@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 3 - External API</title>
+</head>
+
+<body>
+    <button id="btn">Load Users</button>
+    <br><br>
+    <h1>Users</h1>
+    <div id="users"></div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", loadUsers);
+
+        function loadUsers() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var users = JSON.parse(this.responseText);
+                    // console.log(users);
+                    var output = "";
+
+                    for (var i in users) {
+                        output += `
+                        <ul>
+                            <li>Name: ${users[i].name}</li>  
+                            <li>Username: ${users[i].username}</li> 
+                            <li>Email: ${users[i].email}</li> 
+                            <li>Address: ${users[i].address.street}, ${users[i].address.city}</li>
+                            <li>Phone: ${users[i].phone}</li>
+                        </ul>
+                        `
+                        document.getElementById("users").innerHTML = output;
+                    }
+                }
+            }
+
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

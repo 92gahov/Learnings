@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-image: linear-gradient(to right, #f0f6fc,#c5d9ed,#9ec2e6,#72aee6);
+}
+table {
+    width: 100%;
+    padding: 12px;
+}
+.main {
+    text-align: center;
+}
+.main h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    font-family: 'Aclonica';
+    padding: 42px;
+    color: #50575e;
+    text-shadow: 2px 2px 6px black;
+}
+.links {
+    height: 100px;
+    background-image: linear-gradient(#9ec2e6,#72aee6,#4f94d4,#4f94d4,#72aee6,#9ec2e6);
+}
+.links a {
+    text-decoration: none;
+    font-size: 32px;
+    font-family: 'Acme';
+    color: #2c3338;
+    padding: 8px;
+    transition: 0.4s;
+}
+.links a:hover {
+    color: #101517;
+    text-shadow: 0 0 5px #101517,0 0 25px #101517, 0 0 50px #101517, 0 0 100px #101517;
+}
+.links {
+    text-align: center;
+}
+.heading {
+    text-align: center;
+}
+.heading h3 {
+    font-family: 'Acme';
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #2c3338;
+    text-shadow: 2px 2px 6px black;
+}
+.one {
+    text-align: center;
+    margin-top: 24px;
+}
+.one p {
+    font-family: 'Acme';
+    font-size: 18px;
+}
+.one td {
+    width: 460px;
+}
+.two {
+    text-align: center;
+    margin-top: 28px;
+}
+.two p {
+    font-family: 'Acme';
+    font-size: 18px;
+}
+.two td {
+    width: 500px;
+}
+.three {
+    text-align: center;
+    margin-top: 24px;
+}
+.four {
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 28px;
+}
+.four p {
+    font-family: 'Acme';
+    font-size: 18px;
+}
+.four td {
+    width: 460px;
+}
+.colosseum {
+    padding-bottom: 20px;
+}
+.endlinks {
+    height: 100px;
+    background-image: linear-gradient(#9ec2e6,#72aee6,#4f94d4,#4f94d4,#72aee6,#9ec2e6);
+}
+.endlinks p {
+    font-family: 'Acme';
+}
+.endlinks a {
+    text-decoration: none;
+    font-size: 32px;
+    font-family: 'Acme';
+    color: #2c3338;
+    padding: 8px;
+    transition: 0.4s;
+}
+.endlinks a:hover {
+    color: #101517;
+    text-shadow: 0 0 5px #101517,0 0 25px #101517, 0 0 50px #101517, 0 0 100px #101517;
+}
+.endlinkss {
+    text-align: center;
+}
+.end {
+    text-align: right;
+}
+img {
+    box-shadow: 10px 10px 6px #646970;
+}

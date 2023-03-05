@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let userNumbers = prompt("Enter numbers, separated by commas.");
+        let numbers = userNumbers.split(",");
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            idx = parseInt(numbers[i])
+            sum += idx;
+        };
+        console.log(sum);
+
+        ////////////////////////////////////////
+
+        let toNumber = numbers.map((el) => {
+            return parseInt(el);
+        }).reduce((acc, curr) => acc + curr);
+        console.log(toNumber);
+    </script>
+</body>
+
+</html>

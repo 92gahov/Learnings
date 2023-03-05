@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sentence = "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.";
+
+        let words = sentence.split(' ');
+        let wordsFilter = words.filter(word => word[0] === 't').filter(w => w.length > 3);
+        wordsFilter.forEach(el => console.log(el));
+    </script>
+</body>
+
+</html>

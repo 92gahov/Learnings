@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>Song Lyrics</title>
+    <style>
+        #head {
+            display: flex;
+            justify-content: center;
+        }
+
+        #head>div {
+            margin: 0 10px;
+            text-align: center;
+            width: 210px;
+        }
+
+        #head>div img {
+            cursor: pointer;
+        }
+
+        video {
+            display: none;
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #outputLyric {
+            width: 400px;
+            margin: 12px auto;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="head">
+        <div>
+            <img src="img/Disturbed.jpg" width="180" height="180" title="Disturbed - The sound of silence"
+                onclick="AjaxCallLyric('./lyrics/The-Sound-of-Silence.txt'); AjaxCallVideo('./videos/The-Sound-of-Silence.mp4')">
+            <p>Disturbed - The Sound of Silence</p>
+        </div>
+        <div>
+            <img src="img/Marilyn-Manson.jpg" width="180" height="180" title="Marilyn Manson - Tainted love"
+                onclick="AjaxCallLyric('./lyrics/Tainted-Love.txt'); AjaxCallVideo('./videos/Tainted-Love.mp4')">
+            <p>Marilyn Manson - Tainted Love</p>
+        </div>
+        <div>
+            <img src="img/KeXsT46t32hz1yG5PE9k-76066.jpg" width="180" height="180" title="Rammstein - Du Hast"
+                onclick="AjaxCallLyric('./lyrics/Du-hast.txt'); AjaxCallVideo('./videos/Du-hast.mp4')">
+            <p>Rammstein - Du Hast</p>
+        </div>
+    </div> -->
+
+
+
+    <div id="head">
+        <div>
+            <img src="img/Disturbed.jpg" width="180" height="180" title="Disturbed - The sound of silence"
+                data-name="The-Sound-of-Silence">
+            <p>Disturbed - The Sound of Silence</p>
+        </div>
+        <div>
+            <img src="img/Marilyn-Manson.jpg" width="180" height="180" title="Marilyn Manson - Tainted love"
+                data-name="Tainted-Love">
+            <p>Marilyn Manson - Tainted Love</p>
+        </div>
+        <div>
+            <img src="img/KeXsT46t32hz1yG5PE9k-76066.jpg" width="180" height="180" title="Rammstein - Du Hast"
+                data-name="Du-hast">
+            <p>Rammstein - Du Hast</p>
+        </div>
+    </div>
+
+
+    <video id="outputVideo" autoplay controls></video>
+    <div id="outputLyric"></div>
+
+
+    <script src="XMLHttpRequest.js"></script>
+</body>
+
+</html>

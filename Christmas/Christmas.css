@@ -1,0 +1,524 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    height: 300px;
+    position: relative;
+    background-color: #c5d9ed;
+}
+
+.snowTop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url("img/pngfind.com-snowflake-png-transparent-131976.png");
+    animation: snoww 60s linear infinite;
+}
+
+@keyframes snoww {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 1024px;
+    }
+}
+
+.groundTop {
+    position: absolute;
+    width: 100%;
+    bottom: -6px;
+}
+
+.headerTop {
+    text-align: center;
+    padding: 2px;
+    height: 126px;
+}
+
+
+
+h1 {
+    font-family: 'Allerta Stencil';
+    font-size: 52px;
+    text-transform: uppercase;
+}
+
+h1 span {
+    animation: christmas 2.7s forwards infinite;
+    margin: 14px;
+    color: #e65054;
+}
+
+@keyframes christmas {
+    0% {
+        font-size: 52px;
+        color: #e65054;
+    }
+
+    50% {
+        font-size: 58px;
+        color: #8a2424;
+        text-shadow: 0px 0px 28px #451313;
+    }
+
+    100% {
+        font-size: 52px;
+        color: #e65054;
+    }
+}
+
+h1 span:nth-child(2) {
+    animation-delay: 0.28s;
+}
+
+h1 span:nth-child(3) {
+    animation-delay: 0.56s;
+}
+
+h1 span:nth-child(4) {
+    animation-delay: 0.84s;
+}
+
+h1 span:nth-child(5) {
+    animation-delay: 1.12s;
+}
+
+h1 span:nth-child(6) {
+    animation-delay: 1.40s;
+}
+
+h1 span:nth-child(7) {
+    animation-delay: 1.68s;
+}
+
+h1 span:nth-child(8) {
+    animation-delay: 1.96s;
+}
+
+h1 span:nth-child(9) {
+    animation-delay: 2.20s;
+}
+
+/*----------------------------------*/
+.flyingSanta {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+}
+
+/*----------------------------------*/
+[class$=Text] p {
+    font-family: 'Original Surfer';
+}
+
+.firstSection {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #fcf0f1;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.firstText {
+    width: 840px;
+    position: absolute;
+    top: 64px;
+    left: 252px;
+}
+
+.border {
+    width: 930px;
+    height: 446px;
+    position: absolute;
+    top: 46px;
+    left: 210px;
+    border-radius: 8px;
+    animation: lights 1s infinite;
+}
+
+@keyframes lights {
+    0% {
+        box-shadow: 0px 0px 40px rgb(255, 0, 0);
+    }
+
+    20% {
+        box-shadow: 0px 0px 40px rgb(0, 0, 255);
+    }
+
+    40% {
+        box-shadow: 0px 0px 40px rgb(0, 255, 0);
+    }
+
+    60% {
+        box-shadow: 0px 0px 40px rgb(255, 255, 0);
+    }
+
+    80% {
+        box-shadow: 0px 0px 40px rgb(0, 255, 255);
+    }
+
+    100% {
+        box-shadow: 0px 0px 40px rgb(255, 0, 255);
+    }
+}
+
+/*-------------------------------------*/
+.secondSection {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.secondText {
+    width: 860px;
+    height: 390px;
+    position: absolute;
+    top: 48px;
+    left: 270px;
+    animation: showtext 0.8s;
+    display: none;
+}
+
+@keyframes showtext {
+    from {
+        top: -500px;
+    }
+
+    to {
+        top: 48px;
+    }
+}
+
+.secondSectionBg {
+    position: relative;
+}
+
+
+
+/*----------------------------*/
+.thirdSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #fcf0f1;
+    margin-top: -20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.treeMain {
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.tree {
+    margin-top: 34px;
+}
+
+.gift1, .gift2, .gift3 {
+    position: absolute;
+    z-index: 1;
+}
+
+.gift1 {
+    width: 70px;
+    height: 40px;
+    background-image: repeating-linear-gradient(45deg, #3582c4, #b32d2e, #005c12);
+    top: 326px;
+    left: 420px;
+    animation: gift1 1.5s;
+    display: none;
+}
+
+@keyframes gift1 {
+    from {
+        top: 160px;
+        opacity: 0.7;
+    }
+
+    to {
+        top: 326px;
+        opacity: 1;
+    }
+}
+
+.gift2 {
+    width: 80px;
+    height: 60px;
+    background-color: #2271b1;
+    left: 440px;
+    top: 366px;
+    animation: gift2 1.5s;
+    display: none;
+}
+
+@keyframes gift2 {
+    from {
+        top: 200px;
+        opacity: 0.7;
+    }
+
+    to {
+        top: 366px;
+        opacity: 1;
+
+    }
+}
+
+.gift3 {
+    width: 80px;
+    height: 60px;
+    background-image: repeating-linear-gradient(180deg, #8a2424, #614200, #007017);
+    top: 366px;
+    left: 200px;
+    animation: gift3 1.5s;
+    display: none;
+}
+
+@keyframes gift3 {
+    from {
+        top: 200px;
+        opacity: 0.7;
+    }
+
+    to {
+        top: 366px;
+        opacity: 1;
+    }
+}
+
+
+.santaMain {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.santaMain form {
+    font-family: 'Original Surfer';
+    padding: 16px;
+    padding-left: 34px;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    box-shadow: 4px 4px 10px #a7aaad;
+}
+
+.santaMain form input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Original Surfer';
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.santaMain form input[type=number] {
+    width: 40px;
+}
+
+.santaMain form button {
+    font-size: 24px;
+    color: black;
+    border-bottom: none;
+    background-color: #f86368;
+    width: 90px;
+    border: none;
+}
+
+.santaMain form button:hover {
+    color: white;
+    background-color: #8a2424;
+    cursor: pointer;
+}
+
+.santaMain form label, span {
+    font-size: 20px;
+}
+
+.santaMain textarea {
+    margin-top: 8px;
+    border: 2px solid black;
+    resize: none;
+}
+
+.santaMain form img {
+    position: absolute;
+}
+
+.check {
+    display: flex;
+    justify-content: space-around;
+}
+
+.santa {
+    position: absolute;
+    left: 128px;
+}
+
+/*-------------------------------*/
+.forthSection {
+    background-color: #dcdcde;
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.forthTextMain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.forthText {
+    width: 84%;
+    background-color: #FFFFFF;
+    padding: 16px;
+    box-shadow: 8px 8px 20px #101517;
+}
+
+.forthSection img {
+    position: absolute;
+    top: -25px;
+    left: 300px;
+}
+
+/*-------------------------------*/
+.fifthSection {
+    /* padding-top: 56px;*/
+    padding-bottom: 28px;
+    position: relative;
+    width: 100%;
+    background-color: #c5d9ed;
+}
+
+.fiftSectionCont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.fifthText {
+    width: 64%;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.snowManMain {
+    width: 28%;
+    text-align: center;
+    margin-top: 72px;
+}
+
+.hat {
+    position: absolute;
+    top: 36px;
+    right: 90px;
+    transition: 0.4s;
+}
+
+.snowground {
+    position: absolute;
+    width: 100%;
+    top: 404px;
+}
+
+/*------------------------------*/
+.sixthSection {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 490px;
+    background-color: #f0f6fc;
+}
+
+.endsnow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background: url("img/pngfind.com-snowflake-png-transparent-131976.png");
+    animation: snowww 20s linear infinite;
+}
+
+@keyframes snowww {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 1024px;
+    }
+}
+
+.houseMain {
+    position: relative;
+    margin-top: 90px;
+}
+
+.house {
+    z-index: 1;
+    position: absolute;
+    left: -320px;
+}
+
+.ladder {
+    position: absolute;
+    top: 38px;
+    left: -42px;
+    z-index: 2;
+}
+
+.santaVisit {
+    position: absolute;
+    top: 316px;
+    left: -65px;
+    height: 80px;
+    z-index: 3;
+}
+
+.snowhouse {
+    position: absolute;
+    top: 472px;
+    width: 100%;
+    z-index: 4;
+}
+
+.greeting {
+    background-image: linear-gradient(to right, #ff8085, #f86368, #e65054, #d63638);
+    width: 500px;
+    height: 120px;
+    padding: 6px;
+    text-align: center;
+    margin-top: 190px;
+    animation: greeting 1.7s;
+    display: none;
+}
+
+@keyframes greeting {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.greeting h2 {
+    font-family: 'Piedra';
+    font-size: 38px;
+    letter-spacing: 4px;
+}

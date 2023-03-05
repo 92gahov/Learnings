@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const items = [
+            { name: "Rice", price: 5 },
+            { name: "Book", price: 20 },
+            { name: "Car", price: 100 },
+            { name: "Chicken", price: 10 },
+            { name: "Monitor", price: 100 }
+        ]
+
+        // let totalPrice = 0;
+        // items.forEach(item => {
+        //     totalPrice += item.price
+        // })
+
+        // const totalPrice = items.reduce((total, item) => {
+        //     console.log(`Total: ${total}`)
+        //     console.log(`Item: ${item.price}`)
+        //     return total + item.price
+        // }, 0)
+
+        // console.log(totalPrice)
+
+        const result = items.reduce((groupedItems, item) => {
+            const price = item.price;
+            if (groupedItems[price] == null) groupedItems[price] = [];
+            groupedItems[price].push(item)
+            return groupedItems
+        }, {})
+
+        console.log(result)
+
+        const numbers = [13, 2, 5]
+
+        const sum = numbers.reduce((total, number, index, array) => {
+            console.log(index)
+            console.log(array)
+            return total + number
+        }, 0)
+
+        console.log(sum)
+    </script>
+</body>
+
+</html>

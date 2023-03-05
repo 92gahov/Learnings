@@ -1,0 +1,1 @@
+### Simple auto corrector that helps you fast and easy to correct not well readable text.

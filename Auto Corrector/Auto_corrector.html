@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto corrector</title>
+    <style>
+        div {
+            width: 74%;
+            margin: 24px auto 0 auto;
+            text-align: center;
+        }
+
+        div p {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        textarea {
+            font-size: 16px;
+            padding: 6px;
+            border: 2px solid black;
+            border-radius: 8px;
+            resize: none;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 4px 10px;
+            border: 2px solid black;
+            font-weight: bold;
+            color: rgb(41, 39, 39);
+            background-color: rgb(230, 223, 223);
+            margin-top: 12px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(41, 39, 39);
+            color: rgb(230, 223, 223);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Simple Auto Corrector</h1>
+        <p style="text-align: center;">For example, <i>copy</i> the text below, and <i>paste</i> it in the field. Then
+            click the button.</p>
+        <hr>
+        <hr>
+        <p title="Copy this text!"><b>jorge grinned and patted Elena on the arm. i came here from Mexico. we were poor.
+                his mouth twisted into a
+                grimace. often, no food. but here, now that i have my green card. he smiled. it's a paradise. i like to
+                send
+                money back home to mama. he checked the wiring one more and then left.<b></p>
+        <textarea id="input" rows="7" cols="80" placeholder="Paste text here..."></textarea>
+        <br>
+        <button id="btn">Click</button>
+    </div>
+    <div>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        var input = document.getElementById("input");
+
+        function sentenceCase(input, lowerCaseBefore) {
+            input = (input === undefined || input === null) ? "" : input;
+            if (lowerCaseBefore) {
+                input = input.toLowerCase();
+            }
+            return input.toString().replace(/(^|\. *)([a-z])/g, function (match, separator, char) {
+                return separator + char.toUpperCase();
+            })
+        };
+
+        document.getElementById("btn").addEventListener("click", () => {
+            input = sentenceCase(input.value);
+            let str = input.split(" ");
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] == "i") {
+                    str[i] = "I";
+                }
+            }
+            let newStr = str.join(" ");
+            document.getElementById("output").innerHTML = newStr;
+        });
+
+
+    </script>
+</body>
+
+</html>

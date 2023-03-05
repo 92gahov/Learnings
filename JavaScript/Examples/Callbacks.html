@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="click">Click Me</button>
+    <script>
+        // setTimeout(() => {
+        //     console.log("Timer")
+        // }, 5000);
+
+        // function x(y) {
+        //     console.log("x");
+        //     y();
+        // };
+
+        // x(function y() {
+        //     console.log("y");
+        // });
+
+
+        // document.getElementById("click").addEventListener("click", () => {
+        //     console.log("Button Clicked");
+        // });
+
+
+        // let count = 0;
+        // document.getElementById("click").addEventListener("click", () => {
+        //     console.log("Button Clicked", ++count);
+        // });
+
+        function attachEventListeners() {
+            let count = 0;
+            document.getElementById("click").addEventListener("click", () => {
+                console.log("Button Clicked", ++count);
+            });
+        };
+        attachEventListeners();
+    </script>
+</body>
+
+</html>

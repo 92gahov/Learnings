@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Sort array of objects by key
+
+        const todos = [
+            {
+                title: 'Todo1',
+                completed: true,
+                priority: 'low'
+            },
+            {
+                title: 'Todo2',
+                completed: false,
+                priority: 'low'
+            },
+            {
+                title: 'Todo3',
+                completed: true,
+                priority: 'high'
+            },
+            {
+                title: 'Todo4',
+                completed: true,
+                priority: 'medium'
+            },
+            {
+                title: 'Todo5',
+                completed: false,
+                priority: 'high'
+            },
+            {
+                title: 'Todo6',
+                completed: true,
+                priority: 'low'
+            },
+        ];
+
+        function sortArrayByKey(a, b) {
+            const priorityA = a.priority;
+            const priorityB = b.priority;
+            if (priorityA < priorityB) {
+                return -1;
+            }
+            if (priorityA > priorityB) {
+                return 1
+            }
+        };
+
+        const newTodos = todos.sort(sortArrayByKey);
+
+        console.log(newTodos);
+    </script>
+</body>
+
+</html>

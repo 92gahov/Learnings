@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .egg {
+            width: 140px;
+            height: 200px;
+            background-color: #bd8600;
+            margin: 20px auto 0 auto;
+            border-radius: 50%;
+        }
+
+        .stove-main {
+            margin-left: 40%;
+            margin-top: 12px;
+        }
+
+        .circle1 {
+            width: 260px;
+            height: 260px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: #a7aaad;
+        }
+
+        .circle2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 28px;
+            margin-left: 28px;
+        }
+
+        .circle3 {
+            width: 130px;
+            height: 130px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 34px;
+            margin-left: 34px;
+        }
+
+        .circle4 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 32px;
+            margin-left: 32px;
+        }
+
+        .stove-menu {
+            border: 2px solid black;
+            width: 300px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-around;
+            margin-left: -40px;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            font-size: 16px;
+            padding: 4px;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .buttons button:nth-child(1) {
+            background-color: #1ed14b;
+        }
+
+        .buttons button:nth-child(2) {
+            background-color: #f86368;
+        }
+
+        .shake {
+            animation: shake 0.3s infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(odeg);
+            }
+
+            25% {
+                transform: translate(2px, 2px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-2px, -2px) rotate(-1deg);
+            }
+
+            75% {
+                transform: translate(3px, -2px) rotate(2deg);
+            }
+
+            100% {
+                transform: translate(-2px, 2px) rotate(-1deg);
+            }
+        }
+
+        .cup {
+            width: 200px;
+            height: 138px;
+            border: 2px solid black;
+            margin: -110px auto 0 auto;
+            transform: rotate(180deg);
+        }
+
+        .water {
+            height: 71%;
+            background-color: #72aee6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="egg"></div>
+    <div class="cup">
+        <div class="water"></div>
+    </div>
+    <div class="stove-main">
+        <div class="stove-circle">
+            <div class="circle1">
+                <div class="circle2">
+                    <div class="circle3">
+                        <div class="circle4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stove-menu">
+            <div class="counter">10</div>
+            <div class="buttons">
+                <button onclick="on()">On</button>
+                <button id="off">Off</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var num = 10;
+        var egg = document.querySelector(".egg");
+        var offBtn = document.getElementById("off");
+        function on() {
+            var countdown = setInterval(boiling, 1000);
+            function boiling() {
+                num--;
+                document.querySelector(".counter").innerHTML = num;
+                if (num === 0) {
+                    clearInterval(countdown);
+                    document.querySelector(".counter").innerHTML = "READY!";
+                }
+            }
+            var hot1 = setTimeout(circle1, 2000);
+            var hot2 = setTimeout(circle2, 4000);
+            var hot3 = setTimeout(circle3, 6000);
+            var hot4 = setTimeout(circle4, 8000);
+            var water = setTimeout(waterboil, 4000)
+            var bad = setTimeout(shake, 12000);
+            var blackEgg = setTimeout(veryBad, 16000);
+            var w = 0;
+            function waterboil() {
+                if (w == 0) {
+                    w = 1;
+                    var waterblue = document.querySelector(".water");
+                    var height = 71;
+                    var wb = setInterval(diss, 160);
+                    function diss() {
+                        if (height >= 90) {
+                            clearInterval(wb);
+                            w = 0;
+                        } else {
+                            height--;
+                            waterblue.style.height = height + "%";
+                        }
+                    }
+                }
+            }
+            function circle1() {
+                document.querySelector(".circle4").style.backgroundColor = "red";
+            }
+            function circle2() {
+                document.querySelector(".circle3").style.backgroundColor = "red";
+            }
+            function circle3() {
+                document.querySelector(".circle2").style.backgroundColor = "red";
+            }
+            function circle4() {
+                document.querySelector(".circle1").style.backgroundColor = "red";
+            }
+            function shake() {
+                egg.classList.add("shake");
+            }
+            function veryBad() {
+                egg.classList.remove("shake");
+                egg.style.backgroundColor = "black";
+            }
+            offBtn.addEventListener("click", () => {
+                clearInterval(countdown);
+                clearTimeout(hot1);
+                clearTimeout(hot2);
+                clearTimeout(hot3);
+                clearTimeout(hot4);
+                clearTimeout(bad);
+                clearTimeout(blackEgg);
+                clearTimeout(water);
+                if (num > 0) {
+                    alert("Not ready!!!");
+                } else if (!egg.classList.contains("shake") && num === 0) {
+                    alert("The egg is ready for eat!!!");
+                } else if (egg.classList.contains("shake")) {
+                    egg.classList.remove("shake");
+                    egg.style.backgroundColor = "black";
+                    alert("Too late!!!");
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

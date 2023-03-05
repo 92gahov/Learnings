@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main>div:nth-child(1) {
+            padding: 14px 30px;
+            margin-right: 40px;
+            margin-top: 60px;
+        }
+
+        .main>div:nth-child(1) input {
+            width: 80px;
+            padding: 8px;
+            margin-right: 6px;
+        }
+
+        .main>div:nth-child(2) {
+            text-align: center;
+        }
+
+        .main>div:nth-child(2) p {
+            font-size: 18px;
+        }
+
+        .convert {
+            background-color: #c3c4c7;
+            padding: 6px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .convert:hover {
+            cursor: pointer;
+            background-color: #a7aaad;
+        }
+
+        .contain {
+            background-color: #c3c4c7;
+            padding: 6px;
+            height: 0;
+            overflow-y: hidden;
+            position: inherit;
+            margin-top: -12px;
+            transition: 0.8s;
+        }
+
+        .contain p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .contain p:hover {
+            background-color: #a7aaad;
+            cursor: pointer;
+        }
+
+        .main>div:nth-child(3) {
+            padding: 4px 20px;
+            border: 2px solid black;
+            width: 160px;
+            height: 60px;
+            margin-left: 60px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Currency converter</h1>
+    <div class="main">
+        <div>
+            <input type="number" id="current">
+            <span>BGN</span>
+        </div>
+        <div>
+            <div class="convert" onclick="showContain()">
+                <p>Convert to :</p>
+            </div>
+            <div class="contain">
+                <p id="eur">Евро EUR</p>
+                <p id="usd">Щатски долар USD</p>
+                <p id="gbp">Британски паунд GBP</p>
+                <p id="chf">Швейцарски франк CHF</p>
+                <p id="try">Турска лира TRY</p>
+                <p id="sek">Шведска крона SEK</p>
+                <p id="nok">Норвежка крона NOK</p>
+                <p id="dkk">Датска крона DKK</p>
+                <p id="ron">Румънска лея RON</p>
+                <p id="pln">Полска злота PLN</p>
+                <p id="cnh">Китайски юан CNH</p>
+                <p id="cad">Канадски долар CAD</p>
+            </div>
+        </div>
+        <div>
+            <p id="result">result</p>
+        </div>
+    </div>
+
+    <script src="currency-converter.js"></script>
+</body>
+
+</html>

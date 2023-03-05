@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            margin-top: 80px;
+            width: 300px;
+            min-height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        .type {
+            display: inline-flex;
+            font-size: 30px;
+            color: #e7eb14;
+        }
+
+        .type span {
+            height: 1.2em;
+            width: 0%;
+            margin-top: 30px;
+            overflow: hidden;
+            word-break: break-all;
+            animation: txt 0.5s infinite steps(1),
+                line 2s linear infinite alternate;
+        }
+
+        @keyframes line {
+
+            90%,
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes txt {
+
+            0%,
+            100% {
+                box-shadow: 5px 0 0 #0000;
+            }
+
+            50% {
+                box-shadow: 5px 0 0 #e7eb14;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <span class="type">
+            <span>My name is Georgi</span>
+        </span>
+    </div>
+</body>
+
+</html>

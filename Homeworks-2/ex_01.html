@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Fix the problem in countdown function, so that we see in console the numbers 1,2,3
+
+        // Do not change the object
+        const counter = {
+            currentCount: 0,
+            tick() {
+                this.currentCount++;
+                console.log(this.currentCount);
+            }
+        }
+
+        // fix the problem in countdown function
+        function countdown(times) {
+            const delay = 1000;
+            while (times) {
+                setTimeout(counter.tick.bind(counter), delay * times);
+                times--;
+            }
+        }
+
+        countdown(3);
+    </script>
+</body>
+
+</html>

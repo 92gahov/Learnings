@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            margin: 0 auto;
+            width: 86%;
+            padding: 90px 0;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cot_main>div:nth-child(1) {
+            width: 10px;
+            height: 230px;
+            background-color: brown;
+        }
+
+        .cot_main {
+            display: flex;
+        }
+
+        .top_bottom>div:nth-child(1) {
+            width: 230px;
+            height: 10px;
+            background-color: brown;
+        }
+
+        .cot_main>div:nth-child(3) {
+            width: 10px;
+            height: 230px;
+            background-color: brown;
+        }
+
+        .bottom {
+            margin-top: 210px;
+            width: 230px;
+            height: 10px;
+            background-color: brown;
+        }
+
+        .top_bottom img {
+            position: absolute;
+            z-index: 1000;
+        }
+
+        #sheep_1 {
+            top: 110px;
+            left: 100px;
+            transition: 2.6s;
+        }
+
+        #sheep_2 {
+            left: 100px;
+            top: 180px;
+            transition: 3.4s;
+        }
+
+        #sheep_3 {
+            left: 100px;
+            top: 250px;
+            transition: 4s;
+        }
+
+        #shepherd {
+            position: absolute;
+            top: 390px;
+            left: 300px;
+        }
+
+        .grassland {
+            width: 500px;
+            height: 400px;
+            background-color: #1ed14b;
+            margin-top: -60px;
+            position: relative;
+        }
+
+        #door {
+            transition: 1s;
+        }
+
+        .grassland_1 {
+            height: 133px;
+        }
+
+        .grassland_2 {
+            height: 133px;
+        }
+
+        .grassland_3 {
+            height: 133px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="cot_main">
+            <div></div>
+            <div class="top_bottom" ondragover="allowCot(event)">
+                <div></div>
+                <div>
+                    <img src="img/n955218.png" width="50" height="50" draggable="true" id="sheep_1">
+                </div>
+                <div>
+                    <img src="img/n955218.png" width="50" height="50" draggable="true" id="sheep_2">
+                </div>
+                <div>
+                    <img src="img/n955218.png" width="50" height="50" draggable="true" id="sheep_3">
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <div id="door"></div>
+            <img id="shepherd" src="img/PinClipart.com_bible-clipart_5299116.png" width="90" height="110">
+        </div>
+        <div class="grassland">
+            <div class="grassland_1" ondragover="allowGrass(event)"></div>
+            <div class="grassland_2" ondragover="allowGrass(event)"></div>
+            <div class="grassland_3" ondragover="allowGrass(event)"></div>
+        </div>
+    </div>
+    <audio src="Sheep-Lamb-Bah-A-www.fesliyanstudios.com.mp3" id="baa"></audio>
+    <audio src="WhistleHumanFinger PE139801.mp3" id="shepherd_call"></audio>
+
+    <script>
+        document.getElementById("sheep_1").addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("sheep1", event.target.id);
+            let sheepBaa = document.getElementById("baa");
+            sheepBaa.play();
+        })
+        document.getElementById("sheep_2").addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("sheep2", event.target.id)
+            let sheepBaa = document.getElementById("baa");
+            sheepBaa.play();
+        })
+        document.getElementById("sheep_3").addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("sheep3", event.target.id);
+            let sheepBaa = document.getElementById("baa");
+            sheepBaa.play();
+        })
+
+        function allowCot(event) {
+            event.preventDefault();
+        }
+        function allowGrass(event) {
+            event.preventDefault();
+        }
+
+        document.querySelector(".grassland_1").addEventListener("drop", (event) => {
+            event.preventDefault();
+            let sheep_1 = event.dataTransfer.getData("sheep1");
+            let dragedSheep_1 = document.getElementById(sheep_1);
+            document.querySelector(".grassland_1").appendChild(dragedSheep_1);
+            dragedSheep_1.style.marginLeft = "140px";
+            dragedSheep_1.style.marginTop = "40px";
+        })
+
+        document.querySelector(".grassland_2").addEventListener("drop", (event) => {
+            event.preventDefault();
+            let sheep_2 = event.dataTransfer.getData("sheep2");
+            let dragedSheep_2 = document.getElementById(sheep_2);
+            document.querySelector(".grassland_2").appendChild(dragedSheep_2);
+            dragedSheep_2.style.marginTop = "50px";
+            dragedSheep_2.style.marginLeft = "200px";
+        })
+        document.querySelector(".grassland_3").addEventListener("drop", (event) => {
+            event.preventDefault();
+            let sheep_3 = event.dataTransfer.getData("sheep3");
+            let dragedSheep_3 = document.getElementById(sheep_3);
+            document.querySelector(".grassland_3").appendChild(dragedSheep_3);
+            dragedSheep_3.style.marginTop = "40px";
+            dragedSheep_3.style.marginLeft = "280px";
+        })
+        document.querySelector(".top_bottom").addEventListener("drop", (event) => {
+            let sheep_1 = event.dataTransfer.getData("sheep1");
+            let dragedSheep_1 = document.getElementById(sheep_1);
+            document.querySelector(".top_bottom").appendChild(dragedSheep_1);
+            dragedSheep_1.style.marginTop = "0";
+            dragedSheep_1.style.marginLeft = "0";
+        })
+        document.querySelector(".top_bottom").addEventListener("drop", (event) => {
+            let sheep_2 = event.dataTransfer.getData("sheep2");
+            let dragedSheep_2 = document.getElementById(sheep_2);
+            document.querySelector(".top_bottom").appendChild(dragedSheep_2);
+            dragedSheep_2.style.marginTop = "0";
+            dragedSheep_2.style.marginLeft = "0";
+        })
+        document.querySelector(".top_bottom").addEventListener("drop", (event) => {
+            let sheep_3 = event.dataTransfer.getData("sheep3");
+            let dragedSheep_3 = document.getElementById(sheep_3);
+            document.querySelector(".top_bottom").appendChild(dragedSheep_3);
+            dragedSheep_3.style.marginTop = "0";
+            dragedSheep_3.style.marginLeft = "0";
+        })
+
+        document.getElementById("door").addEventListener("click", () => {
+            document.getElementById("door").style.marginTop = "220px";
+            let sheep_1 = document.getElementById("sheep_1");
+            let sheep_2 = document.getElementById("sheep_2");
+            let sheep_3 = document.getElementById("sheep_3");
+            let sheepBaa = document.getElementById("baa");
+            setTimeout(() => {
+                document.getElementById("door").style.marginTop = "0";
+            }, 1600)
+            setTimeout(() => {
+                sheepBaa.play();
+            }, 500);
+            setTimeout(() => {
+                sheep_1.style.marginLeft = "690px";
+                sheep_1.style.marginTop = "-40px";
+            }, 200)
+            setTimeout(() => {
+                sheep_2.style.marginTop = "10px";
+                sheep_2.style.marginLeft = "740px";
+            }, 500)
+            setTimeout(() => {
+                sheep_3.style.marginLeft = "810px";
+                sheep_3.style.marginTop = "60px";
+            }, 700)
+        })
+
+        document.getElementById("shepherd").addEventListener("click", () => {
+            let sheepCall = document.getElementById("shepherd_call");
+            let sheepBaa = document.getElementById("baa");
+            let sheep_1 = document.getElementById("sheep_1");
+            let sheep_2 = document.getElementById("sheep_2");
+            let sheep_3 = document.getElementById("sheep_3");
+            sheepCall.play();
+            setTimeout(() => {
+                sheepBaa.play();
+            }, 500)
+            setTimeout(() => {
+                document.getElementById("door").style.marginTop = "220px"
+            }, 1300);
+            setTimeout(() => {
+                document.getElementById("door").style.marginTop = "0";
+            }, 3300)
+            sheep_1.style.transform = "scaleX(-1)";
+            sheep_1.style.transition = "0.4s";
+            setTimeout(() => {
+                sheep_1.style.marginLeft = "0";
+                sheep_1.style.marginTop = "0";
+                sheep_1.style.transition = "2.6s";
+            }, 200)
+            setTimeout(() => {
+                sheep_1.style.transform = "scaleX(1)";
+                sheep_1.style.transition = "0.4s";
+            }, 3200);
+            sheep_2.style.transform = "scaleX(-1)"
+            sheep_2.style.transition = "0.4s";
+            setTimeout(() => {
+                sheep_2.style.marginTop = "0";
+                sheep_2.style.marginLeft = "0";
+                sheep_2.style.transition = "3.4s";
+            }, 500)
+            setTimeout(() => {
+                sheep_2.style.transform = "scaleX(1)";
+                sheep_2.style.transition = "0.4s";
+            }, 3800);
+            sheep_3.style.transform = "scaleX(-1)";
+            sheep_3.style.transition = "0.4s";
+            setTimeout(() => {
+                sheep_3.style.marginLeft = "0";
+                sheep_3.style.marginTop = "0";
+                sheep_3.style.transition = "4s";
+            }, 800);
+            setTimeout(() => {
+                sheep_3.style.transform = "scaleX(1)";
+                sheep_3.style.transition = "0.4s";
+            }, 4300);
+        })
+    </script>
+</body>
+
+</html>

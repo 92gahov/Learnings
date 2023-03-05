@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cot-main {
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            margin: 4px auto;
+        }
+
+        .cot2 {
+            margin-top: 14px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 18px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button onclick="openCot()">Open cot</button>
+        <button onclick="closeCot()">Close cot</button>
+        <button id="addF" onclick="addFirstFlock()" disabled>Add first flock</button>
+        <button id="addS" onclick="addSecondFlock()" disabled>Add second flock</button>
+        <button id="removeF" onclick="removeFirstFlock()" disabled>Remove first flock</button>
+        <button id="removeS" onclick="removeSecondFlock()" disabled>Remove second flock</button>
+        <p id="info">The cot is closed!</p>
+        <div class="cot-main">
+            <p id="capacity"></p>
+            <div class="cot1"></div>
+            <div class="cot2"></div>
+        </div>
+    </div>
+
+    <script>
+        var cot = {
+            Capacity: "200 sheeps",
+            Closed: true,
+            Open: function () {
+                this.Closed = !this.Closed ? true : false;
+            },
+            Close: function () {
+                this.Closed = true;
+            },
+        }
+        document.getElementById("capacity").innerHTML = "Capacity:" + " " + cot.Capacity;
+        function makeCot1(qnt, no) {
+            return {
+                No: no,
+                Color: "",
+                Quantity: qnt
+            }
+        }
+        function makeCot2(qnt, no) {
+            return {
+                No: no,
+                Color: "",
+                Quantity: qnt
+            }
+        }
+        function makeFlock1(no) {
+            return {
+                Flock: [],
+                AddFlock: function (flock) {
+                    this.Flock.push(flock);
+                }
+            }
+        }
+        function makeFlock2(no) {
+            return {
+                Flock: [],
+                AddFlock: function (flock) {
+                    this.Flock.push(flock);
+                }
+            }
+        }
+        function addFirstFlock() {
+            var flock_1 = makeFlock1(1);
+            var sheep_1 = makeCot1("70", "1");
+            sheep_1.Color = "white";
+            flock_1.AddFlock(sheep_1);
+            flock_1.Flock.forEach(flock => {
+                document.querySelector(".cot1").innerHTML =
+                    "Flock No:" + flock.No + "<br>" +
+                    "Sheep color:" + flock.Color + "<br>" +
+                    "Sheep quantity:" + flock.Quantity;
+            })
+            document.getElementById("addF").disabled = true;
+            document.getElementById("removeF").disabled = false;
+        }
+
+        function removeFirstFlock() {
+            var flock_1 = makeFlock1(1);
+            var sheep_1 = makeCot1("0", "1");
+            sheep_1.Color = "no sheeps";
+            document.querySelector(".cot1").innerHTML =
+                "Flock No:" + sheep_1.No + "<br>" +
+                "Sheep color:" + sheep_1.Color + "<br>" +
+                "Sheep quantity:" + sheep_1.Quantity;
+            document.getElementById("addF").disabled = false;
+            document.getElementById("removeF").disabled = true;
+        }
+
+        function addSecondFlock() {
+            var flock_2 = makeFlock2(2);
+            var sheep_2 = makeCot2("130", "2");
+            sheep_2.Color = "black";
+            flock_2.AddFlock(sheep_2);
+            flock_2.Flock.forEach(flock => {
+                document.querySelector(".cot2").innerHTML =
+                    "Flock No:" + flock.No + "<br>" +
+                    "Sheep color:" + flock.Color + "<br>" +
+                    "Sheep quantity:" + flock.Quantity;
+            })
+            document.getElementById("addS").disabled = true;
+            document.getElementById("removeS").disabled = false;
+        }
+        function removeSecondFlock() {
+            var flock_1 = makeFlock2(2);
+            var sheep_1 = makeCot2("0", "2");
+            sheep_1.Color = "no sheeps";
+            document.querySelector(".cot2").innerHTML =
+                "Flock No:" + sheep_1.No + "<br>" +
+                "Sheep color:" + sheep_1.Color + "<br>" +
+                "Sheep quantity:" + sheep_1.Quantity;
+            document.getElementById("removeS").disabled = true;
+            document.getElementById("addS").disabled = false;
+        }
+        function openCot() {
+            cot.Open();
+            if (!cot.Closed) {
+                document.getElementById("info").innerHTML = "The cot is open!";
+                document.getElementById("addF").disabled = false;
+                document.getElementById("addS").disabled = false;
+            }
+        }
+        function closeCot() {
+            cot.Close()
+            if (cot.Closed) {
+                document.getElementById("info").innerHTML = "The cot is closed!";
+                document.getElementById("addF").disabled = true;
+                document.getElementById("addS").disabled = true;
+                document.getElementById("removeF").disabled = true;
+                document.getElementById("removeS").disabled = true;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

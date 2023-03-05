@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .formMain {
+            position: absolute;
+            top: 164px;
+            left: 226px;
+            height: 400px;
+            width: 900px;
+            transform: rotate(-7deg);
+        }
+
+        .formMain label {
+            font-weight: bold;
+        }
+
+        .info {
+            position: absolute;
+            left: 160px;
+            top: 30px;
+        }
+
+        .info input {
+            width: 240px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid black;
+        }
+
+        .info input[type=text],
+        [type=tel] {
+            margin-bottom: 16px;
+        }
+
+        .message {
+            position: absolute;
+            top: 200px;
+            left: 540px;
+        }
+
+        .message textarea {
+            resize: none;
+            border: 2px solid black;
+            border-radius: 8px;
+            margin-top: 4px;
+        }
+
+        .send {
+            position: absolute;
+            top: 300px;
+            left: 200px;
+        }
+
+        .send input {
+            font-size: 20px;
+            width: 100px;
+            padding: 4px;
+            border: 2px solid black;
+            border-radius: 8px;
+            background-color: #b32d2e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .send input:hover {
+            cursor: pointer;
+            background-color: #691c1c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="envelope">
+            <img src="img/envelope.png" width="1000" height="620">
+        </div>
+
+    </div>
+    <div class="formMain">
+        <form method="POST" action="Page_2.html">
+            <div class="info">
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="Enter your name..."
+                    required><br>
+                <label for="phone">Phone number:</label><br>
+                <input type="tel" name="phone" id="phone" pattern="+94[7-9]{2}-[0-9]{3}-[0-9]{4}" autocomplete="off"
+                    placeholder="Enter your phone number..." required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    autocomplete="off" placeholder="Enter your email address..." required>
+            </div>
+            <div class="message">
+                <label for="message">Message:</label><br>
+                <textarea name="message" id="message" rows="10" cols="40" placeholder="Enter your message..."
+                    required></textarea>
+            </div>
+            <div class="send">
+                <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var main = document.createElement('div');
+        var trapezoid = document.createElement('div');
+        var side_c_p = document.createElement('p');
+        var side_a_p = document.createElement('p');
+        var side_d_p = document.createElement("p")
+        var side_b_p = document.createElement('p');
+        var h_p = document.createElement('p');
+        side_a_p.setAttribute("id", "side_a_p")
+        side_c_p.setAttribute("id", "side_c_p");
+        side_d_p.setAttribute("id", "side_d_p");
+        side_b_p.setAttribute("id", "side_b_p");
+        var line = document.createElement('div');
+        var input_side_a = document.createElement('input');
+        var input_side_b = document.createElement('input');
+        var label_side_a = document.createElement('label');
+        var label_side_b = document.createElement('label');
+        var input_side_c = document.createElement('input');
+        var label_side_c = document.createElement('label');
+        var input_side_d = document.createElement('input');
+        var label_side_d = document.createElement('label');
+        var input_h = document.createElement('input');
+        var label_h = document.createElement('label');
+        var divButton = document.createElement('div');
+        var btn = document.createElement("button");
+        var face_result = document.createElement('div');
+        var circumference_result = document.createElement('div');
+        ///////////////////////////////////////////////////////////////
+        input_side_a.setAttribute("type", "number");
+        input_side_a.setAttribute("id", "side_a");
+        label_side_a.setAttribute("for", "side_a");
+        input_side_b.setAttribute("type", "number");
+        input_side_b.setAttribute("id", "side_b");
+        label_side_b.setAttribute("for", "side_b")
+        input_side_c.setAttribute("type", "number");
+        input_side_c.setAttribute("id", "side_c");
+        label_side_c.setAttribute("for", "side_c");
+        input_side_d.setAttribute("type", "number");
+        input_side_d.setAttribute("id", "side_d");
+        label_side_d.setAttribute("for", "side_d")
+        input_h.setAttribute("type", "number");
+        input_h.setAttribute("id", "h");
+        label_h.setAttribute("for", "h");
+        btn.setAttribute("type", "button");
+        btn.setAttribute("id", "btn");
+        face_result.setAttribute("id", "face");
+        circumference_result.setAttribute("id", "circumference");
+        document.body.appendChild(main);
+        side_c_p.innerText = "c";
+        side_a_p.innerText = "a";
+        side_b_p.innerText = "b";
+        side_d_p.innerText = "d";
+        h_p.innerText = "h";
+        label_side_a.innerText = "a = ";
+        label_side_b.innerText = "b = ";
+        label_side_c.innerText = "c = ";
+        label_side_d.innerText = "d = ";
+        label_h.innerText = "h = ";
+        btn.innerText = "Calculate";
+        main.appendChild(side_c_p);
+        main.appendChild(side_a_p);
+        main.appendChild(side_b_p);
+        main.appendChild(side_d_p);
+        main.appendChild(h_p);
+        main.appendChild(trapezoid);
+        main.appendChild(line);
+        main.appendChild(label_side_a);
+        main.appendChild(input_side_a);
+        main.appendChild(label_side_b);
+        main.appendChild(input_side_b);
+        main.appendChild(label_side_c);
+        main.appendChild(input_side_c);
+        main.appendChild(label_side_d);
+        main.appendChild(input_side_d);
+        main.appendChild(label_h);
+        main.appendChild(input_h);
+        main.appendChild(divButton);
+        divButton.appendChild(btn);
+        divButton.appendChild(face_result);
+        divButton.appendChild(circumference_result);
+        ////////////////////////////////////////////////////////////////
+        main.style.position = "relative";
+        main.style.paddingTop = "36px"
+        trapezoid.style.height = "0px";
+        trapezoid.style.width = "200px";
+        trapezoid.style.borderBottom = "140px solid #ff8085";
+        trapezoid.style.borderLeft = "25px solid transparent";
+        trapezoid.style.borderRight = "25px solid transparent";
+        trapezoid.style.marginLeft = "70px"
+        side_a_p.style.position = "absolute";
+        side_a_p.style.top = "0"
+        side_a_p.style.left = "190px"
+        side_b_p.style.position = "absolute";
+        side_b_p.style.top = "80px";
+        side_b_p.style.left = "318px"
+        side_d_p.style.position = "absolute";
+        side_d_p.style.top = "166px";
+        side_d_p.style.left = "190px";
+        side_c_p.style.position = "absolute";
+        side_c_p.style.top = "80px";
+        side_c_p.style.left = "60px"
+        h_p.style.position = "absolute";
+        h_p.style.top = "80px";
+        h_p.style.left = "144px";
+        line.style.backgroundColor = "black";
+        line.style.position = "absolute";
+        line.style.width = "2px";
+        line.style.height = "140px";
+        line.style.top = "36px"
+        line.style.left = "140px";
+        input_side_a.style.width = "40px";
+        input_side_a.style.padding = "4px";
+        input_side_a.style.marginTop = "50px"
+        input_side_b.style.width = "40px";
+        input_side_b.style.padding = "4px";
+        label_side_b.style.marginLeft = "20px";
+        input_side_c.style.width = "40px";
+        input_side_c.style.padding = "4px";
+        label_side_c.style.marginLeft = "20px";
+        input_side_d.style.width = "40px";
+        input_side_d.style.padding = "4px";
+        label_side_d.style.marginLeft = "20px";
+        input_h.style.width = "40px";
+        input_h.style.padding = "4px";
+        label_h.style.marginLeft = "20px";
+        divButton.style.marginTop = "40px";
+        btn.style.fontSize = "20px";
+        face_result.style.marginTop = "40px";
+        face_result.style.fontSize = "20px";
+        circumference_result.style.fontSize = "20px";
+
+        function face() {
+            let side_a = Number(document.getElementById("side_a").value);
+            let side_d = Number(document.getElementById("side_d").value);
+            let h = Number(document.getElementById("h").value);
+            let resultFace = ((side_a + side_d) * h) / 2;
+            document.getElementById("face").innerHTML = "The face of the trapezoid is:" + " " + resultFace.toFixed(2);
+        };
+        function circumference() {
+            let side_a = Number(document.getElementById("side_a").value);
+            let side_b = Number(document.getElementById("side_b").value);
+            let side_c = Number(document.getElementById("side_c").value);
+            let side_d = Number(document.getElementById("side_d").value);
+            let resultCircumference = side_a + side_b + side_c + side_d;
+            document.getElementById("circumference").innerHTML = "The circumference of the trapezoid is:" + " " + resultCircumference.toFixed(2);
+        };
+        document.getElementById("btn").addEventListener("click", () => {
+            face();
+            circumference();
+        })
+    </script>
+</body>
+
+</html>

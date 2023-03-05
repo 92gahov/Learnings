@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        button {
+            font-size: 20px;
+            margin: 8px;
+        }
+
+        .table-main {
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 12px;
+            width: 360px;
+            height: 360px;
+            margin: 50px auto;
+        }
+
+        .table-main>div {
+            font-size: 20px;
+            margin-top: 16px;
+        }
+
+        .table-main>div:nth-child(1) {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <button onclick="serve()">Serve whole table</button>
+            <button onclick="set()">Set whole table</button>
+        </div>
+        <div>
+            <button onclick="addSpoons()">Add more spoons</button>
+            <button onclick="removeSpoon()" id="remove-spoon" disabled>Remove spoon</button>
+        </div>
+        <div>
+            <button onclick="addPlates()">Add more plates</button>
+            <button onclick="removePlate()" id="remove-plate" disabled>Remove plate</button>
+        </div>
+        <div>
+            <button onclick="addForks()">Add more forks</button>
+            <button onclick="removeFork()" id="remove-fork" disabled>Remove fork</button>
+        </div>
+        <div>
+            <button onclick="addCups()">Add more cups</button>
+            <button onclick="removeCup()" id="remove-cup" disabled>Remove cup</button>
+        </div>
+    </div>
+    <div class="table-main">
+        <div class="spoons"></div>
+        <div class="plates"></div>
+        <div class="forks"></div>
+        <div class="cups"></div>
+    </div>
+
+    <script>
+        var tableServe = {
+            spoons: 4,
+            plates: 6,
+            forks: 3,
+            cups: 5
+        };
+        function serve() {
+            document.querySelector(".spoons").innerHTML = "Spoons:" + " " + tableServe.spoons;
+            document.querySelector(".plates").innerHTML = "Plates:" + " " + tableServe.plates;
+            document.querySelector(".forks").innerHTML = "Forks:" + " " + tableServe.forks;
+            document.querySelector(".cups").innerHTML = "Cups:" + " " + tableServe.cups;
+            document.getElementById("remove-spoon").disabled = false;
+            document.getElementById("remove-plate").disabled = false;
+            document.getElementById("remove-fork").disabled = false;
+            document.getElementById("remove-cup").disabled = false;
+        }
+        function set() {
+            document.querySelector(".spoons").innerHTML = "";
+            document.querySelector(".plates").innerHTML = "";
+            document.querySelector(".forks").innerHTML = "";
+            document.querySelector(".cups").innerHTML = "";
+            document.getElementById("remove-spoon").disabled = true;
+            document.getElementById("remove-plate").disabled = true;
+            document.getElementById("remove-fork").disabled = true;
+            document.getElementById("remove-cup").disabled = true;
+        }
+        function addSpoons() {
+            document.querySelector(".spoons").innerHTML = "Spoons:" + " " + (tableServe.spoons += 1);
+            document.getElementById("remove-spoon").disabled = false;
+        }
+        function removeSpoon() {
+            document.querySelector(".spoons").innerHTML = "Spoons:" + " " + (tableServe.spoons -= 1);
+            if (tableServe.spoons === 0) {
+                document.querySelector(".spoons").innerHTML = "";
+                document.getElementById("remove-spoon").disabled = true;
+            }
+        }
+        function addPlates() {
+            document.querySelector(".plates").innerHTML = "Plates:" + " " + (tableServe.plates += 1);
+            document.getElementById("remove-plate").disabled = false;
+        }
+        function removePlate() {
+            document.querySelector(".plates").innerHTML = "Plates:" + " " + (tableServe.plates -= 1);
+            if (tableServe.plates === 0) {
+                document.querySelector(".plates").innerHTML = "";
+                document.getElementById("remove-plate").disabled = true;
+            }
+        }
+        function addForks() {
+            document.querySelector(".forks").innerHTML = "Forks:" + " " + (tableServe.forks += 1);
+            document.getElementById("remove-fork").disabled = false;
+        }
+        function removeFork() {
+            document.querySelector(".forks").innerHTML = "Forks:" + " " + (tableServe.forks -= 1);
+            if (tableServe.forks === 0) {
+                document.querySelector(".forks").innerHTML = "";
+                document.getElementById("remove-fork").disabled = true;
+            }
+        }
+        function addCups() {
+            document.querySelector(".cups").innerHTML = "Cups:" + " " + (tableServe.cups += 1);
+            document.getElementById("remove-cup").disabled = false;
+        }
+        function removeCup() {
+            document.querySelector(".cups").innerHTML = "Cups:" + " " + (tableServe.cups -= 1);
+            if (tableServe.cups === 0) {
+                document.querySelector(".cups").innerHTML = "";
+                document.getElementById("remove-cup").disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

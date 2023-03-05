@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="client">Client</label>
+    <br>
+    <input type="text" name="client" id="client">
+    <br>
+    <label for="amount">Amount</label>
+    <br>
+    <input type="number" name="amount" id="amount">
+    <br><br>
+    <button type="button" id="btn">Submit</button>
+
+    <script>
+        let client = document.getElementById("client");
+        let amount = document.getElementById("amount");
+
+        class Person {
+            constructor(name, amount) {
+                this.name = name;
+                this.amount = amount
+            }
+            show() {
+                console.log(`${this.name}: ${this.amount}`)
+            }
+        }
+
+        class NewClient extends Person {
+            constructor(name, amount) {
+                super(name, amount);
+                this.name = name;
+                this.amount = amount;
+            }
+        }
+
+        // let client1 = new NewClient("georgi", 2000);
+
+        document.getElementById("btn").addEventListener("click", () => {
+            let newCl = new NewClient(client.value, amount.value);
+            newCl.show();
+        })
+    </script>
+</body>
+
+</html>

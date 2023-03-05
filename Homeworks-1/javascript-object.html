@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bg-container {
+            position: relative;
+        }
+
+        .bulgaria {
+            text-align: center;
+            border: 2px solid black;
+            padding: 12px;
+            background-color: #fcf0f1;
+            position: inherit;
+            z-index: 2;
+        }
+
+        .bulgaria button {
+            font-size: 20px;
+            border: 1px solid black;
+            font-weight: bold;
+            padding: 18px 0px;
+            margin-top: 8px;
+            width: 220px;
+            background-image: linear-gradient(#f0f0f1, #007017, #d63638);
+        }
+
+        .bulgaria button:hover {
+            cursor: pointer;
+        }
+
+        .bg-info {
+            border: 2px solid black;
+            padding: 8px;
+            background-color: #f5e6ab;
+            position: absolute;
+            width: 308px;
+            top: 88px;
+            transition: 0.8s;
+        }
+
+        .bg-info p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .bg-info span {
+            font-weight: normal;
+        }
+
+        /*--------------------------------------------*/
+
+        .i-container {
+            position: relative;
+        }
+
+        .italy {
+            text-align: center;
+            border: 2px solid black;
+            padding: 12px;
+            background-color: #fcf0f1;
+            position: inherit;
+            z-index: 2;
+        }
+
+        .italy button {
+            font-size: 20px;
+            border: 1px solid black;
+            font-weight: bold;
+            padding: 18px 0px;
+            width: 220px;
+            margin-top: 8px;
+            background-image: linear-gradient(to right, #007017, #f0f0f1, #f0f0f1, #d63638);
+        }
+
+        .italy button:hover {
+            cursor: pointer;
+        }
+
+        .i-info {
+            border: 2px solid black;
+            padding: 8px;
+            background-color: #f5e6ab;
+            position: absolute;
+            width: 308px;
+            top: 88px;
+            transition: 0.8s;
+        }
+
+        .i-info p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .i-info span {
+            font-weight: normal;
+        }
+
+        /*------------------------------------------------*/
+
+        .gr-container {
+            position: relative;
+        }
+
+        .greece {
+            text-align: center;
+            border: 2px solid black;
+            padding: 12px;
+            background-color: #fcf0f1;
+            position: inherit;
+            z-index: 2;
+        }
+
+        .greece button {
+            font-size: 20px;
+            border: 1px solid black;
+            font-weight: bold;
+            padding: 18px 0px;
+            width: 220px;
+            margin-top: 8px;
+            background-image: linear-gradient(#135e96, #f0f0f1, #135e96, #f0f0f1, #135e96, #f0f0f1, #135e96);
+        }
+
+        .greece button:hover {
+            cursor: pointer;
+        }
+
+        .gr-info {
+            border: 2px solid black;
+            padding: 8px;
+            background-color: #f5e6ab;
+            position: absolute;
+            width: 308px;
+            top: 88px;
+            transition: 0.8s;
+        }
+
+        .gr-info p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .gr-info span {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="bg-container">
+            <div class="bulgaria">
+                <img src="img/Bulgaria.jpg" width="300" height="200"><br>
+                <button onclick="showBG()">Bulgaria</button>
+            </div>
+            <div class="bg-info"></div>
+        </div>
+        <div class="i-container">
+            <div class="italy">
+                <img src="img/Italy.jpg" width="300" height="200"><br>
+                <button onclick="showI()">Italy</button>
+            </div>
+            <div class="i-info"></div>
+        </div>
+        <div class="gr-container">
+            <div class="greece">
+                <img src="img/Greece.jpg" width="300" height="200"><br>
+                <button onclick="showGr()">Greece</button>
+            </div>
+            <div class="gr-info"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var bulgaria = {
+        capital: "Sofia",
+        currency: "Lev (BGN)",
+        population: "6 927 000",
+        president: "Rumen Radev"
+    };
+    var bulgariaInfo = document.querySelector(".bg-info");
+    bulgariaInfo.innerHTML += `
+    <p>Capital: <span>${bulgaria.capital}</span></p>
+    <p>Currency: <span>${bulgaria.currency}</span></p>
+    <p>Population: <span>${bulgaria.population}</span></p>
+    <p>President: <span>${bulgaria.president}</span></p>
+    `
+    function showBG() {
+        bulgariaInfo.style.top = "300px";
+    };
+
+    var italy = {
+        capital: "Rome",
+        currency: "Euro (EUR)",
+        population: "59 433 744",
+        president: "Sergio Mattarella"
+    };
+    var italyInfo = document.querySelector(".i-info");
+    italyInfo.innerHTML += `
+    <p>Capital: <span>${italy.capital}</span></p>
+    <p>Currency: <span>${italy.currency}</span></p>
+    <p>Population: <span>${italy.population}</span></p>
+    <p>President: <span>${italy.president}</span></p>
+    `
+    function showI() {
+        italyInfo.style.top = "300px";
+    };
+    var greece = {
+        capital: "Athens",
+        currency: "Euro (EUR)",
+        population: "10 702 000",
+        president: "Katerina Sakellaropoulou"
+    };
+    var greeceInfo = document.querySelector(".gr-info");
+    greeceInfo.innerHTML += `
+    <p>Capital: <span>${greece.capital}</span></p>
+    <p>Currency: <span>${greece.currency}</span></p>
+    <p>Population: <span>${greece.population}</span></p>
+    <p> President: <span>${greece.president}</span></p>
+    `
+    function showGr() {
+        greeceInfo.style.top = "300px";
+    };
+</script>
+
+</html>

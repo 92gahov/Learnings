@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(184, 182, 182);
+}
+
+
+.content {
+    width: 40%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 16px;
+}
+
+
+.col {
+    background-color: rgb(184, 182, 182);
+    border: 2px solid rgb(107, 105, 105);
+    padding: 12px;
+    text-align: center;
+}
+
+/*---------------------------------------*/
+
+.even-columns {
+    display: flex;
+    gap: 1em;
+}
+
+.even-columns>* {
+    flex-basis: 100%;
+}
+
+/*---------------------------------------------*/
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish>* {
+    flex: 1 1 10em;
+}
+
+/*------------------------------------------------*/
+
+.content-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-sidebar > *:nth-child(1) {
+    flex: 1 1 70%;
+    min-width: 30ch;
+}
+
+.content-sidebar > *:nth-child(2) {
+    flex: 1 1 30%;
+    min-width: 15ch;
+}

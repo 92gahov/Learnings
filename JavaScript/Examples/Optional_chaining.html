@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor(name, address, hobbies) {
+                this.name = name
+                this.address = address
+                this.hobbies = hobbies
+            }
+            print() {
+                console.log(this)
+            }
+        }
+
+        function printPersonStreet(person) {
+            // console.log(person.address.street)
+            // console.log(person && person.address && person.address.street)
+            console.log(person?.address?.street)
+        }
+
+        const john = new Person(
+            "John",
+            // {street: "12345 main st", city: "Somewhere"},
+            undefined,
+            ["Bowling", "Weight Lifting"]
+        )
+        john.print?.();
+        john.printName?.();
+
+        // printPersonStreet(john)
+        // printPersonStreet(undefined)
+        printPersonStreet(john)
+    </script>
+</body>
+</html>

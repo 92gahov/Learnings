@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let name = {
+        //     firstName: "John",
+        //     lastName: "Doe",
+        //     fullName: function() {
+        //         console.log(this.firstName + " " + this.lastName)
+        //     }
+        // }
+        // name.fullName();
+
+        // let name2 = {
+        //     firstName: "Georgi",
+        //     lastName: "Gahov",
+        // }
+
+        // name.fullName.call(name2);
+
+
+        let name = {
+            firstName: "John",
+            lastName: "Doe",
+        }
+
+        function fullName(country) {
+            console.log(this.firstName + " " + this.lastName + " from " + country)
+        }
+
+        let name2 = {
+            firstName: "Georgi",
+            lastName: "Gahov",
+        }
+
+        fullName.call(name, "Country1")
+        fullName.call(name2, "Country2");
+
+        fullName.apply(name, ["Country1"])
+        fullName.apply(name, ["Country2"])
+
+        let printName = fullName.bind(name, "Country1");
+        console.log(printName);
+        printName();
+    </script>
+</body>
+
+</html>

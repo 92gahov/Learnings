@@ -1,0 +1,146 @@
+.bgFlag {
+    border: 3px solid black;
+    width: 1200px;
+    height: 600px;
+    margin-top: 20px;
+    margin-left: 80px;
+    position: relative;
+}
+.white {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to right, #f6f7f7, #f0f0f1, #dcdcde, #c3c4c7);
+}
+.green {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to right, #68de7c, #1ed14b, #00ba37, #007017);
+}
+.red {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to right, #ff8085, #e65054, #d63638, #8a2424);
+}
+.images {
+    display: flex;
+    justify-content: space-around;
+    width: 1200px;
+    margin-left: 80px;
+    position: absolute;
+    margin-top: -384px;
+}
+.Aimg {
+    position: relative;
+    border: 2px solid black;
+    padding: 6px;
+}
+.Limg {
+    position: relative;
+    border: 2px solid black;
+    padding: 6px;
+}
+.Bimg {
+    position: relative;
+    border: 2px solid black;
+    padding: 6px;
+}
+.Simg {
+    position: relative;
+    border: 2px solid black;
+    padding: 6px;
+}
+.Beimg {
+    position: relative;
+    border: 2px solid black;
+    padding: 6px;
+}
+.Aname {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    top: 114px;
+    left: 70px;
+    display: none;
+    color: white;
+}
+.Lname {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    top: 110px;
+    left: 310px;
+    display: none;
+    color: white;
+}
+.Bname {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    top: 110px;
+    left: 554px; 
+    display: none;
+    color: white;
+}
+.Sname {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    top: 110px;
+    left: 766px; 
+    display: none;
+    color: white;
+}
+.Bename {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    top: 110px;
+    left: 1014px; 
+    display: none;
+    color: white;
+}
+.Aimg:hover {
+    opacity: 0.9;
+}
+.Limg:hover {
+    opacity: 0.9;
+}
+.Bimg:hover {
+    opacity: 0.9;
+}
+.Simg:hover {
+    opacity: 0.9;
+}
+.Beimg:hover {
+    opacity: 0.9;
+}
+.Asparuh:hover .Aname {
+    display: block;
+}
+.Levski:hover .Lname {
+    display: block;
+}
+.Botev:hover .Bname {
+    display: block;
+}
+.Simeon:hover .Sname {
+    display: block;
+}
+.Benkovski:hover .Bename {
+    display: block;
+}
+.Asparuh:hover {
+    cursor: pointer;
+}
+.Levski:hover {
+    cursor: pointer;
+}
+.Botev:hover {
+    cursor: pointer;
+}
+.Simeon:hover {
+    cursor: pointer;
+}
+.Benkovski:hover {
+    cursor: pointer;
+}

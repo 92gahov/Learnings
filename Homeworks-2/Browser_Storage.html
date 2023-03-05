@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgChoice {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #remove-div {
+            display: none;
+        }
+
+        #remove-div p {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgChoice">
+        <h2>Choose background color:</h2>
+        <select class="bg-color">
+            <option value="#FF0000">red</option>
+            <option value="#00FF00">green</option>
+            <option value="#0000FF">blue</option>
+        </select>
+        <button class="btn">Set BG</button>
+        <div id="remove-div">
+            <p>If you want remove background color, click <i>Remove</i></p>
+            <button id="removeBtn">Remove</button>
+        </div>
+    </div>
+
+
+    <script>
+        var bgcolor = document.querySelector(".bg-color");
+
+
+        // ------------------------------ With Local Storage ! -------------------------------
+
+
+        // document.querySelector(".btn").addEventListener("click", () => {
+        //     localStorage.setItem("color", JSON.stringify(bgcolor.value));
+        //     showRemove();
+        //     changeBG();
+        // });
+
+        // function changeBG() {
+        //     let bgColor = JSON.parse(localStorage.getItem("color"))
+        //     document.body.style.backgroundColor = bgColor;
+        // };
+
+        // document.getElementById("removeBtn").addEventListener("click", () => {
+        //     localStorage.removeItem("color");
+        //     showRemove();
+        //     changeBG();
+        // });
+
+        // window.onload = () => {
+        //     showRemove();
+        //     changeBG();
+        // };
+
+        // function showRemove() {
+        //     if (localStorage.getItem("color") != null) {
+        //         document.getElementById("remove-div").style.display = "block";
+        //     } else {
+        //         document.getElementById("remove-div").style.display = "none";
+        //     }
+        // };
+
+
+        // ----------------------------- With Cookie ! ---------------------------
+
+
+
+        // var setCookie = function (n, val) {
+        //     var expire = "expires=Sat, 31 Dec 2022 23:59:59 GMT";
+        //     document.cookie = n + "=" + val + "; " + expire;
+        // };
+
+        // var getCookie = function (n) {
+        //     var name = n + "=";
+        //     var ca = document.cookie.split(";");
+        //     for (let i = 0; i < ca.length; i++) {
+        //         var c = ca[i];
+        //         while (c.charAt(0) == " ") c = c.substring(1);
+        //         if (c.indexOf(name) == 0) {
+        //             return c.substring(name.length, c.length);
+        //         }
+        //     }
+        // };
+
+        // document.onclick = function (e) {
+        //     if (e.target.className == "btn") {
+        //         var favColor = bgcolor.value;
+        //         setCookie("color", favColor);
+        //         document.body.style.backgroundColor = favColor;
+        //         document.getElementById("remove-div").style.display = "block";
+        //         showRemove();
+        //     }
+        // };
+
+        // window.onload = () => {
+        //     var favColor = document.body.style.backgroundColor;
+        //     var color = getCookie("color");
+        //     if (color === "") {
+        //         document.body.style.backgroundColor = favColor;
+        //     } else {
+        //         document.body.style.backgroundColor = color;
+        //         showRemove();
+        //     }
+        // };
+
+        // document.getElementById("removeBtn").addEventListener("click", () => {
+        //     document.cookie = "color=; Max-Age=0";
+        //     document.body.style.backgroundColor = "white";
+        //     showRemove();
+        // });
+
+        // function showRemove() {
+        //     if (getCookie("color")) {
+        //         document.getElementById("remove-div").style.display = "block";
+        //     } else {
+        //         document.getElementById("remove-div").style.display = "none";
+        //     }
+        // };
+
+    </script>
+</body>
+
+</html>

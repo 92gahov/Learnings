@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            border: 2px solid black;
+            text-align: center;
+            width: 300px;
+            padding: 18px 8px;
+            margin: 30px auto;
+        }
+
+        div input[type=text] {
+            font-size: 20px;
+            padding: 4px;
+            margin: 8px 0;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        div input[type=submit] {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px;
+            color: black;
+            background-color: #72aee6;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        div input[type=submit]:hover {
+            cursor: pointer;
+            background-color: #0a4b78;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="#" method="post" id="form" onsubmit="return validateForm()">
+            <label for="uname">Name:</label><br>
+            <input type="text" id="uname" name="uname" autocomplete="off"><br>
+            <label for="email">Email address:</label><br>
+            <input type="text" name="email" id="email" autocomplete="off"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        var emailField = document.getElementById("email");
+        var unameField = document.getElementById("uname");
+        var form = document.getElementById("for");
+        var form = document.getElementById("form");
+        var regx = /^([a-z 0-9\.-]+)@([a-z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+
+
+        function validateForm() {
+            if (unameField.value == "") {
+                unameField.value = "This field is required!";
+                unameField.style.color = "red";
+                unameField.style.borderColor = "red";
+                return false;
+            }
+            if (emailField.value == "This field is required!") {
+                sessionStorage.removeItem("email");
+                return false;
+            }
+            if (emailField.value == "") {
+                emailField.value = "This field is required!";
+                emailField.style.color = "red";
+                emailField.style.borderColor = "red";
+                sessionStorage.removeItem("email");
+                return false;
+            } else if (!emailField.value.match(regx)) {
+                sessionStorage.setItem("email", JSON.stringify(emailField.value));
+                emailField.value = "Invalid email!";
+                emailField.style.color = "red";
+                emailField.style.borderColor = "red";
+                return false;
+            }
+
+            sessionStorage.removeItem("email");
+        }
+
+
+
+        document.getElementById("email").addEventListener("focus", () => {
+            let previous = JSON.parse(sessionStorage.getItem("email"));
+            emailField.value = previous;
+            emailField.style.borderColor = "black";
+            emailField.style.color = "black";
+        })
+        document.getElementById("uname").addEventListener("focus", () => {
+            unameField.style.borderColor = "black";
+            unameField.style.color = "black";
+            unameField.value = "";
+        })
+    </script>
+</body>
+
+</html>

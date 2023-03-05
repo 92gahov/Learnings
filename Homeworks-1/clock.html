@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Joti One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Yatra One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        .main {
+            width: 500px;
+            margin: 130px auto 0 auto;
+            width: 400px;
+            animation: shadow 1s infinite;
+        }
+
+        @keyframes shadow {
+            0% {
+                box-shadow: none;
+            }
+
+            50% {
+                box-shadow: 0 0 5px #1d2327, 0 0 10px #1d2327, 0 0 20px #1d2327,
+                    0 0 30px #1d2327, 0 0 40px #1d2327;
+            }
+
+            100% {
+                box-shadow: none;
+            }
+        }
+
+        .top {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(180deg, #101517, #2c3338, #646970);
+            margin: 0 auto;
+        }
+
+        .middle {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(180deg, #8c8f94, #a7aaad, #c3c4c7, #c3c4c7, #c3c4c7, #a7aaad, #8c8f94);
+        }
+
+        .right {
+            width: 20px;
+            height: 200px;
+            background: linear-gradient(to right, #101517, #2c3338, #646970);
+        }
+
+        .left {
+            width: 20px;
+            height: 200px;
+            background: linear-gradient(to left, #101517, #2c3338, #646970);
+        }
+
+        .bottom {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(0deg, #101517, #2c3338, #646970);
+            margin: 0 auto;
+        }
+
+        .clock {
+            width: 360px;
+        }
+
+        .day_date {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .greeting {
+            text-align: center;
+            font-family: 'Joti One';
+            font-size: 26px;
+        }
+
+        .greeting p {
+            margin-top: 8px;
+        }
+
+        .time {
+            font-family: 'Wallpoet';
+            font-size: 34px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .time p {
+            margin: 28px 0;
+        }
+
+        .day {
+            font-family: 'Yatra One';
+            font-size: 24px;
+        }
+
+        .day p {
+            margin-top: 6px;
+        }
+
+        .date {
+            font-family: 'Alata';
+            font-size: 18px;
+        }
+
+        .date p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top"></div>
+        <div class="middle">
+            <div class="right"></div>
+            <div class="clock">
+                <div class="greeting">
+                    <p id="greetingP"></p>
+                </div>
+                <div class="time">
+                    <p id="timeP"></p>
+                </div>
+                <div class="day_date">
+                    <div class="day">
+                        <p id="dayP"></p>
+                    </div>
+                    <div class="date">
+                        <p id="dateP"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="left"></div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+
+    <script>
+        let timeGr = new Date().getHours();
+        let greeting;
+        if (timeGr < 10) {
+            greeting = "Good morning";
+        } else if (timeGr < 18) {
+            greeting = "Good afternoon";
+        } else {
+            greeting = "Good evening";
+        };
+        document.getElementById("greetingP").innerHTML = greeting;
+
+        let d = new Date().getDate();
+        let m = new Date().getMonth() + 1;
+        let y = new Date().getFullYear();
+        d = addZero(d);
+        m = addZero(m);
+        document.getElementById("dateP").innerHTML = d + "." + m + "." + y;
+
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let day = new Date();
+        let currentDay = days[day.getDay()];
+        document.getElementById("dayP").innerHTML = currentDay;
+
+        function clock() {
+            let time = new Date();
+            let hours = time.getHours();
+            let minutes = time.getMinutes();
+            let seconds = time.getSeconds();
+            hours = addZero(hours);
+            minutes = addZero(minutes);
+            seconds = addZero(seconds);
+            document.getElementById("timeP").innerHTML = hours + ":" + minutes + ":" + seconds;
+            setTimeout(clock, 1000);
+        };
+        document.addEventListener("load", clock());
+
+
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            };
+            return i;
+        };
+
+        function weekend() {
+            if (currentDay == "Sunday" || currentDay == "Saturday") {
+                document.getElementById("dayP").style.color = "red";
+            } else {
+                document.getElementById("dayP").style.color = "black";
+            }
+        };
+        weekend();
+    </script>
+</body>
+
+</html>

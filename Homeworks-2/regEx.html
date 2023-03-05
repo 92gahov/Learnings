@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // TASK:
+        // From a given string find and print all words. For us, a word must follow next specification:
+        // 	1. Word is a string with at least 3 <word symbol> in it.
+        // 	2. <word symbol> can be any of: Latin letters, dash, underscore and numbers.
+        // 	3. A Word must start with a Latin letter.
+
+        // Examples:
+        // 	"this" is a word ('this' has more than 3 <word symbol>).
+        // 	"know-how" is one word (by spec, the dash is a <word symbol>).
+        // 	"1st" is NOT a word, because it doesn't start with letter!
+        // 	"R2-D2" is a word, because it starts with letter!
+
+        // TEST CASE:
+        const testStr = `this is not meaningful.R2-D2 is a robot, first_second,1st of July`;
+
+        // YOUR CODE HERE
+
+        let regEx = /([a-z][0-9][-][a-z][0-9])|([a-z_]){3,}/gi;
+        let words = testStr.match(regEx);
+        words.forEach(el => console.log(el));
+
+        // Without capturing the match.
+        // Capturing is slow and memory consuming! If you need the parenthesis just for grouping- always use the ?: prefix.
+
+        let regEx2 = /(?:[a-z][0-9][-][a-z][0-9])|([a-z_]){3,}/gi;
+        let words2 = testStr.match(regEx);
+        words2.forEach(el => console.log(el));
+
+
+// EXPECTED OUTPUT:
+// this
+// not
+// meaningful
+// R2-D2
+// robot
+// first_second
+// July
+    </script>
+</body>
+
+</html>

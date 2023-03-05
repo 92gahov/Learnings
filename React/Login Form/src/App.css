@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  width: 30%;
+  margin: 30px auto;
+  border: 2px solid black;
+  padding: 20px 0;
+}
+
+.row {
+  display: flex;
+  margin-top: 20px;
+  padding: 0 16px;
+}
+
+.row label {
+  flex: 1;
+}
+
+.row input {
+  flex: 2;
+}
+
+.button {
+  margin-top: 20px;
+}

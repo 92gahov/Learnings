@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <input type="text" id="myValue" value="Hello">
+    <script>
+        // var people = '{"person1": {"name": "John", "age": "40", "location": "Location1"},"person2": {"name": "Doe", "age": "20", "location": "Location2"}}';
+
+        // var myValue = document.getElementById("myValue");
+        // var obj = JSON.parse(people)
+        // var sendAJAX = JSON.stringify(obj)
+
+        // if (sessionStorage.getItem("myVal")) {
+        //     obj = JSON.parse(sessionStorage.getItem("myVal"));
+        //     myValue.value = obj.person1.name;
+        // }
+
+        // myValue.onchange = function () {
+        //     console.log(obj);
+        //     obj.person1.name = this.value;
+        //     sendAJAX = JSON.stringify(obj);
+        //     sessionStorage.setItem("myVal", sendAJAX);
+        // }
+
+
+        var jokes = {
+            "type": "success",
+            "value": [{
+                "id": 502,
+                "joke": "Chuck Norris insists on strongly-typed programming languages.",
+                "categories": ["nerdy"]
+            }, {
+                "id": 227,
+                "joke": "When God said, let there be light, Chuck Norris said, say 'please'.",
+                "categories": []
+            }, {
+                "id": 131,
+                "joke": "Scotty in Star Trek often says Ye cannae change the laws of physics. This is untrue. Chuck Norris can change the laws of physics. With his fists.",
+                "categories": []
+            }, {
+                "id": 16,
+                "joke": "Pluto is actually an orbiting group of British soldiers from the American Revolution who entered space after the Chuck gave them a roundhouse kick to the face.",
+                "categories": []
+            }, {
+                "id": 433,
+                "joke": "In ancient China there is a legend that one day a child will be born from a dragon, grow to be a man, and vanquish evil from the land. That man is not Chuck Norris, because Chuck Norris killed that man.",
+                "categories": []
+            }, {
+                "id": 484,
+                "joke": "Chuck Norris is actually the front man for Apple. He let's Steve Jobs run the show when he's on a mission. Chuck Norris is always on a mission.",
+                "categories": []
+            }, {
+                "id": 186,
+                "joke": "Fear is not the only emotion Chuck Norris can smell. He can also detect hope, as in I hope I don't get a roundhouse kick from Chuck Norris.",
+                "categories": []
+            },
+            {
+                "id": 212,
+                "joke": "Chuck Norris does not play the lottery. It doesn't have nearly enough balls.",
+                "categories": []
+            }, {
+                "id": 389,
+                "joke": "Chuck Norris has banned rainbows from the state of North Dakota.",
+                "categories": []
+            }, {
+                "id": 463,
+                "joke": "Chuck Norris doesn't use web standards as the web will conform to him.",
+                "categories": ["nerdy"]
+            }, {
+                "id": 135,
+                "joke": "Chuck Norris roundhouse kicks don't really kill people. They wipe out their entire existence from the space-time continuum.",
+                "categories": []
+            }, {
+                "id": 95,
+                "joke": "On his birthday, Chuck Norris randomly selects one lucky child to be thrown into the sun.",
+                "categories": []
+            }, {
+                "id": 239,
+                "joke": "Chuck Norris's version of a chocolate milkshake is a raw porterhouse wrapped around ten Hershey bars, and doused in diesel fuel.",
+                "categories": []
+            }, {
+                "id": 15,
+                "joke": "When Chuck Norris goes to donate blood, he declines the syringe, and instead requests a hand gun and a bucket.",
+                "categories": []
+            }, {
+                "id": 476,
+                "joke": "Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses.",
+                "categories": ["nerdy"]
+            }]
+        };
+
+        var output = document.getElementById("output");
+        var container = "<h1>Jokes</h1>";
+        for (var x in jokes.value) {
+            container += (parseInt(x) + 1) + "." + jokes.value[x].joke + "<br>";
+        }
+        output.innerHTML = container;
+    </script>
+</body>
+
+</html>

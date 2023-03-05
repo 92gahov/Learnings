@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+
+.main_start {
+    background-color: #ffabaf;
+    padding: 208px 0;
+}
+
+.main_start>div {
+    width: 500px;
+    height: 240px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.main_start button {
+    font-size: 50px;
+    padding: 12px 18px;
+    width: 240px;
+    letter-spacing: 4px;
+    border: 3px solid black;
+    border-radius: 14px;
+    font-weight: bold;
+    margin-top: 74px;
+    background-color: #b32d2e;
+    color: white;
+    transition: 0.6s;
+}
+
+.main_start button:hover {
+    cursor: pointer;
+    width: 280px;
+}
+
+/*--------------------------------------------------------*/
+
+.main_game {
+    display: none;
+}
+
+.game_first_section {
+    display: flex;
+    background-color: #68de7c;
+    border-bottom: 5px solid black;
+}
+
+.time {
+    margin-left: 540px;
+}
+
+.time p {
+    font-size: 50px;
+    margin: 22px;
+}
+
+.f_section_left {
+    display: flex;
+}
+
+.stop {
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-left: 260px;
+}
+
+.stop button {
+    font-size: 30px;
+    padding: 6px;
+    width: 120px;
+    border: 2px solid black;
+    border-radius: 18px;
+    background-color: red;
+    font-weight: bold;
+}
+
+.stop button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.scores_main h2 {
+    font-size: 40px;
+}
+
+/*---------------------------------------------------------*/
+
+.game_field {
+    width: 100%;
+    height: 496px;
+    background-color: #c5d9ed;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    cursor: crosshair;
+}
+
+#circle_target {
+    width: 46px;
+    height: 46px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+}
+
+/*---------------------------------------------------------------*/
+
+.end {
+    background-color: #101517;
+    text-align: center;
+    padding: 14px 0 6px 0;
+    z-index: 6;
+}
+
+.end p {
+    font-size: 20px;
+    margin: 0;
+    color: #f6f7f7;
+}
+
+.end a {
+    text-decoration: none;
+    color: #f86368;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.end a:hover {
+    text-decoration: underline;
+    color: #facfd2;
+}
+
+/*------------------------------------------------------*/
+
+.countdown_main {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    left: 0;
+    top: 0;
+    background-color: rgb(27, 27, 27, 0.8);
+    display: none;
+}
+
+.countdown_cont {
+    text-align: center;
+    padding: 2px;
+    margin-top: 190px;
+}
+
+.countdown_cont h2 {
+    font-size: 80px;
+    letter-spacing: 5px;
+    color: #f6f7f7;
+}
+
+/*-------------------------------------------------------*/
+
+.end_game {
+    background-color: #ffabaf;
+    padding: 90px 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 657px;
+    display: none;
+}
+
+.end_game>div {
+    text-align: center;
+}
+
+.end_game h2 {
+    font-size: 56px;
+}
+
+.end_game p {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.end_game button {
+    font-size: 26px;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 16px;
+    font-weight: bold;
+    background-color: #9ec2e6;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.end_game button:hover {
+    cursor: pointer;
+    background-color: #135e96;
+    color: white;
+}
